@@ -3,8 +3,8 @@ package common
 import (
 	"fmt"
 
-	"github.com/micro/go-micro/config/source/etcd"
 	"github.com/micro/go-micro/v2/config"
+	"github.com/micro/go-micro/v2/config/source/etcd"
 	"github.com/micro/go-plugins/config/source/consul/v2"
 )
 
