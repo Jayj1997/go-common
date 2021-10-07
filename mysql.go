@@ -4,7 +4,6 @@ import (
 	"fmt"
 
 	"github.com/micro/go-micro/v2/config"
-	"github.com/sirupsen/logrus"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
@@ -30,7 +29,7 @@ func GetMysqlFromConfig(config config.Config, path ...string) *MysqlConfig {
 	return mc
 }
 
-func InitMysql(mc *MysqlConfig) {
+func InitMysql(mc *MysqlConfig) error {
 
 	dsn := mc.User + ":" + mc.Pwd + "@tcp(" + mc.Host + ":" + fmt.Sprintf("%d", mc.Port) + ")/" + mc.Database + "?charset=utf8mb4&parseTime=True&loc=Local"
 
@@ -43,12 +42,7 @@ func InitMysql(mc *MysqlConfig) {
 		Logger: logger.Default.LogMode(logger.Info),
 	})
 
-	if err != nil {
-		logrus.Fatalf("初始化mysql失败, err: %s\n", err.Error())
-	}
-
-	logrus.Infoln("初始化mysql成功")
-
+	return err
 }
 
 func GetMysql() *gorm.DB {
