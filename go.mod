@@ -7,13 +7,9 @@ require (
 	github.com/micro/go-plugins/config/source/consul/v2 v2.9.1
 	github.com/opentracing/opentracing-go v1.2.0
 	github.com/prometheus/client_golang v1.1.0
-	github.com/sirupsen/logrus v1.8.1
 	github.com/uber/jaeger-client-go v2.29.1+incompatible
 	gorm.io/driver/mysql v1.1.2
 	gorm.io/gorm v1.21.15
-)
-
-require (
 	github.com/BurntSushi/toml v0.3.1 // indirect
 	github.com/HdrHistogram/hdrhistogram-go v1.1.2 // indirect
 	github.com/armon/go-metrics v0.0.0-20180917152333-f0300d1749da // indirect
